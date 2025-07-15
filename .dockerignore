@@ -1,2 +1,28 @@
-node_modules
-.env
+#! Logs
+logs              # custom logs folder
+*.log             # all .log files
+npm-debug.log*    # npm debug logs
+yarn-debug.log*   # yarn debug logs
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+#! Dependency folders
+node_modules      # dependencies should be installed inside container
+dist              # build output, not needed unless you're using multi-stage build
+dist-ssr          # same for SSR builds
+
+# !Local/Secrets
+*.local           # sensitive files like *.local configs
+.env              # always exclude secrets
+
+# !IDE/editor stuff
+.vscode/*         # editor config
+!.vscode/extensions.json  # keep extensions.json if you're sharing recommended extensions
+.idea             # JetBrains IDEs
+.DS_Store         # macOS file system
+*.suo             # Visual Studio
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?             # swap files
