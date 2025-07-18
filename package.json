@@ -12,13 +12,14 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "chalk-animation": "^2.0.3",
     "cors": "^2.8.5",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1",
     "ioredis": "^5.6.1",
     "mongoose": "^8.16.3",
     "ora": "^8.2.0",
+    "rate-limit-redis": "^4.2.1",
     "signale": "^1.4.0"
   }
 }

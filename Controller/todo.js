@@ -24,5 +24,5 @@ export const getAlltodo = async (req, res) => {
   } catch (error) {
     logger.error("Error in getAlltodo:", error);
     res.status(500).json({ message: "Internal Server Error" });
-  } 
+  }
 };
