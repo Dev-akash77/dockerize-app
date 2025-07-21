@@ -9,14 +9,13 @@ import rateLimit from "express-rate-limit";
 import RedisStore from "rate-limit-redis";
 
 // ! connection cloud and local
-dbConnect();
-redisConnection();
+dbConnect(); 
+redisConnection(); 
 
 // ! rate limitar using redis
-
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 15,
+  windowMs: 5 * 60 * 1000,  //* 5 miniute for production use 15 miniute
+  max: 15, 
   standardHeaders: true,
   legacyHeaders: false,
   store: new RedisStore({
@@ -33,8 +32,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/todo", limiter);
-app.use("/todo", todoRouter);
+// app.use("/api/todo", limiter);
+app.use("/api/task", todoRouter);
  
 //! Start server
 app.listen(process.env.PORT || 3001, () => {

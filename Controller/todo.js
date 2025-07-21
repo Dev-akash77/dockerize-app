@@ -4,6 +4,9 @@ import { TodoModel } from "./../dbmodel.js";
 
 export const getAlltodo = async (req, res) => {
   try {
+    const id = req.header("x-user-id");
+    console.log(id);
+
     const cacheKey = "all_todo";
     const cacheData = await redis.get(cacheKey);
 
